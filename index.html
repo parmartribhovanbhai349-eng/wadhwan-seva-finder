@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wadhwan Seva Finder</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #2563eb;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --success: #16a34a;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.25rem;
+            margin: 0;
+            color: var(--primary);
+        }
+
+        .lang-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .badge-online {
+            background-color: #dcfce7;
+            color: #15803d;
+        }
+
+        .badge-hybrid {
+            background-color: #fef9c3;
+            color: #a16207;
+        }
+
+        .location-info {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .checklist-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 12px;
+            margin-bottom: 6px;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+        }
+
+        .checklist li {
+            font-size: 0.875rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checklist input[type="checkbox"] {
+            accent-color: var(--primary);
+            width: 16px;
+            height: 16px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div>
+            <h1 id="app-title">Wadhwan Seva Finder</h1>
+            <small id="app-subtitle" style="color:var(--text-light)">Verified Public Services Guide</small>
+        </div>
+        <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">ગુજરાતી</button>
+    </header>
+
+    <!-- Income Certificate -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title" data-en="Income Certificate" data-gu="આવકનું પ્રમાણપત્ર">Income Certificate</h2>
+            <span class="badge badge-online" data-en="Online / Jan Seva" data-gu="ઓનલાઇન / જન સેવા">Online / Jan Seva</span>
+        </div>
+        <div class="location-info">
+            📍 <strong data-en="Office:" data-gu="કચેરી:">Office:</strong> <span data-en="Jan Seva Kendra (Collector Office Campus), Near Tower Road, Surendranagar" data-gu="જન સેવા કેન્દ્ર (કલેક્ટર કચેરી કમ્પાઉન્ડ), ટાવર રોડ નજીક, સુરેન્દ્રનગર">Jan Seva Kendra (Collector Office Campus), Near Tower Road, Surendranagar</span>
+        </div>
+
+        <div class="checklist-title" data-en="Required Documents Checklist:" data-gu="જરૂરી દસ્તાવેજોની યાદી:">Required Documents Checklist:</div>
+        <ul class="checklist">
+            <li><input type="checkbox"> <span data-en="Ration Card Copy" data-gu="રેશન કાર્ડની નકલ">Ration Card Copy</span></li>
+            <li><input type="checkbox"> <span data-en="Identity Proof (Aadhaar/Voter ID)" data-gu="ઓળખનો પુરાવો (આધાર/મતદાન કાર્ડ)">Identity Proof (Aadhaar/Voter ID)</span></li>
+            <li><input type="checkbox"> <span data-en="Electricity Bill / Proof of Residence" data-gu="વીજળી બિલ / રહેઠાણનો પુરાવો">Electricity Bill / Proof of Residence</span></li>
+            <li><input type="checkbox"> <span data-en="Income Proof (Salary Slip / IT Return / Talati Affidavit)" data-gu="આવકનો પુરાવો (પગાર સ્લિપ / આઇટી રિટર્ન / તલાટી એકરારનામું)">Income Proof (Salary Slip / IT Return / Talati Affidavit)</span></li>
+        </ul>
+
+        <div class="actions">
+            <a class="btn btn-outline" target="_blank" href="https://www.digitalgujarat.gov.in" data-en="Apply Online" data-gu="ઓનલાઇન અરજી કરો">Apply Online</a>
+            <a class="btn btn-primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Jan+Seva+Kendra+Collector+Office+Surendranagar" data-en="📍 Get Directions" data-gu="📍 રસ્તો જુઓ">📍 Get Directions</a>
+        </div>
+    </div>
+
+    <!-- Caste Certificate -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title" data-en="Caste Certificate" data-gu="જાતિનું પ્રમાણપત્ર">Caste Certificate</h2>
+            <span class="badge badge-hybrid" data-en="Online / Prant Office" data-gu="ઓનલાઇન / પ્રાંત કચેરી">Online / Prant Office</span>
+        </div>
+        <div class="location-info">
+            📍 <strong data-en="Office:" data-gu="કચેરી:">Office:</strong> <span data-en="Sub-Divisional Officer (Prant Office) / Jan Seva Kendra, Surendranagar" data-gu="નાયબ કલેક્ટર (પ્રાંત કચેરી) / જન સેવા કેન્દ્ર, સુરેન્દ્રનગર">Sub-Divisional Officer (Prant Office) / Jan Seva Kendra, Surendranagar</span>
+        </div>
+
+        <div class="checklist-title" data-en="Required Documents Checklist:" data-gu="જરૂરી દસ્તાવેજોની યાદી:">Required Documents Checklist:</div>
+        <ul class="checklist">
+            <li><input type="checkbox"> <span data-en="Identity Proof (Aadhaar/Voter ID)" data-gu="ઓળખનો પુરાવો (આધાર/મતદાન કાર્ડ)">Identity Proof (Aadhaar/Voter ID)</span></li>
+            <li><input type="checkbox"> <span data-en="School Leaving Certificate (LC)" data-gu="શાળા છોડ્યાનું પ્રમાણપત્ર (LC)">School Leaving Certificate (LC)</span></li>
+            <li><input type="checkbox"> <span data-en="Father's / Relative's Caste Certificate" data-gu="પિતા/સગાનું જાતિ પ્રમાણપત્ર">Father's / Relative's Caste Certificate</span></li>
+            <li><input type="checkbox"> <span data-en="Ration Card Copy" data-gu="રેશન કાર્ડની નકલ">Ration Card Copy</span></li>
+        </ul>
+
+        <div class="actions">
+            <a class="btn btn-outline" target="_blank" href="https://www.digitalgujarat.gov.in" data-en="Apply Online" data-gu="ઓનલાઇન અરજી કરો">Apply Online</a>
+            <a class="btn btn-primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Mamlatdar+Office+Wadhwan+Jan+Seva+Kendra" data-en="📍 Get Directions" data-gu="📍 રસ્તો જુઓ">📍 Get Directions</a>
+        </div>
+    </div>
+
+    <!-- Birth Certificate -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title" data-en="Birth Certificate" data-gu="જન્મનું પ્રમાણપત્ર">Birth Certificate</h2>
+            <span class="badge badge-online" data-en="Municipality / e-Gram" data-gu="નગરપાલિકા / ઇ-ગ્રામ">Municipality / e-Gram</span>
+        </div>
+        <div class="location-info">
+            📍 <strong data-en="Office:" data-gu="કચેરી:">Office:</strong> <span data-en="Surendranagar-Wadhwan Municipality (Health Dept), Tower Road / Local Gram Panchayat" data-gu="સુરેન્દ્રનગર-વઢવાણ નગરપાલિકા (આરોગ્ય શાખા), ટાવર રોડ / સ્થાનિક ગ્રામ પંચાયત">Surendranagar-Wadhwan Municipality (Health Dept), Tower Road / Local Gram Panchayat</span>
+        </div>
+
+        <div class="checklist-title" data-en="Required Documents Checklist:" data-gu="જરૂરી દસ્તાવેજોની યાદી:">Required Documents Checklist:</div>
+        <ul class="checklist">
+            <li><input type="checkbox"> <span data-en="Hospital Birth Slip / Discharge Card" data-gu="હોસ્પિટલ જન્મ નોંધ સ્લિપ / ડિસ્ચાર્જ કાર્ડ">Hospital Birth Slip / Discharge Card</span></li>
+            <li><input type="checkbox"> <span data-en="Parents' Identity Proofs (Aadhaar/Voter ID)" data-gu="માતા-પિતાના ઓળખના પુરાવા (આધાર/મતદાન કાર્ડ)">Parents' Identity Proofs (Aadhaar/Voter ID)</span></li>
+            <li><input type="checkbox"> <span data-en="Address Proof" data-gu="રહેઠાણનો પુરાવો">Address Proof</span></li>
+        </ul>
+
+        <div class="actions">
+            <a class="btn btn-outline" target="_blank" href="https://eolakh.gujarat.gov.in" data-en="Check Online (E-Olakh)" data-gu="ઓનલાઇન જુઓ (ઇ-ઓળખ)">Check Online (E-Olakh)</a>
+            <a class="btn btn-primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Surendranagar+Wadhwan+Municipality+Office" data-en="📍 Get Directions" data-gu="📍 રસ્તો જુઓ">📍 Get Directions</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'en' ? 'gu' : 'en';
+        document.getElementById('lang-btn').innerText = currentLang === 'en' ? 'ગુજરાતી' : 'English';
+        
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.innerText = el.getAttribute(`data-${currentLang}`);
+        });
+    }
+</script>
+
+</body>
+</html>
